@@ -189,4 +189,98 @@ public class Main {
 		do {
 			System.out.println("Fromage de chevre");
 		} while(!hasphone);
+
+// Les fonction
+
+private = privée
+public = publique
+protected = proteger
+
+private static (static = on peut l'appeler rapidement comme par exemple: nomDeLaFonction.Test)
+
+exemple 1:
+
+private static int getCalcul(){
+	return 5;
+}
 		
+int = type de la variable
+
+void = on retourne rien sa veut qu'on met du code et pas un return
+
+// executer une fonction:
+
+// Class Principale
+public class Main {
+
+// le code qui s'execute en premier
+	public static void main(String[] args) {
+		SendMessage();
+	}
+
+	private static void SendMessage() {
+		System.out.println("ceci est un petit message dans la console");
+		}
+
+	}
+
+// exemple 2
+
+// Class Principale
+public class Main {
+
+// le code qui s'execute en premier
+	public static void main(String[] args) {
+		SendMessage("test", 9); //test
+		SendMessage("fromage", 17); //fromage
+	}
+
+	private static void SendMessage(String message, int number) {
+		System.out.println("ceci "+number+" est un petit message dans la console : " + message);
+		}
+
+	}
+
+//ceci ecriras dans la console:
+
+ceci 9 est un petit message dans la console : test
+ceci 17 est un petit message dans la console : fromage
+
+// exemple 3
+
+// Class Principale
+public class Main {
+
+	// le code qui s'execute en premier
+	public static void main(String[] args) {
+		
+		int money = 1000;
+		int pricephone = 800;
+		boolean hasphone = true;
+
+		SendMessage("La difference est de : " + getResultat(money, pricephone, hasphone), 9); //test*
+
+	}
+
+	private static void SendMessage(String message, int number) {
+		System.out.println("ceci "+number+" est un petit message dans la console : " + message);
+		}
+	
+	private static int getResultat(int money, int pricephone, boolean hasphone) { 
+		
+		if( money >= pricephone && !hasphone) {
+			System.out.println("Tu peut acheter ce telephone");
+		} else {
+			System.out.println("Tu n'a pas assez d'argent pour acheter ce telephone et en plus tu a deja un telephone");
+		}
+		
+		return money - pricephone;
+	}
+	
+	
+
+}
+
+//ca ecriras dans la console:
+
+ceci 9 est un petit message dans la console : La difference est de : 200
